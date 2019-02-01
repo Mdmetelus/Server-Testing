@@ -1,6 +1,6 @@
 const request = require('supertest');
 
-const server = require('./server.js');
+const server = require('../server.js');
 
 
 describe('server.js', () => {
@@ -17,11 +17,6 @@ describe('server.js', () => {
         expect(response.type).toMatch(/text/i);
       });
   
-      it('should send back an string', async () => {
-        const expected = `API working.\n Sanity Check\n Test Route!`;
-  
-        let response = await request(server).get('/');
-  
-        expect(response.body).toEqual(expected);
-      });
     });
+
+  });
